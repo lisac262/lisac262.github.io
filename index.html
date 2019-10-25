@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html ng-App="KRRclass" lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Animalzoo</title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/css-custom.css" rel="stylesheet">
+
+
+  </head>
+
+  <body  ng-controller="MainCtrl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-acl mb-5">
+	  <a class="navbar-brand" href="#">
+	      <img src="" height="50" alt="">
+	    </a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mb-5">
+
+
+		 <div class="container mt-5 mb-5">
+		   <div class="row justify-content-md-center">
+		     <div class="col-md-auto">
+		       <h3>What can you find here?</h3>
+		     </div>
+
+		   </div>
+		   <div class="row">
+			   <!-- put the variable associated with your SPARQL endpoint in the brakets, e.g. {{myVarName}}  -->
+			   <!-- if you reload the page, your endpoint name should appear -->
+		     <div class="col">
+If you want to know more about our zoo, you are in the right place!
+<br>Our application provides you with information about all the different animals living in our zoo.
+		     </div>
+		   </div>
+		 </div>
+
+
+
+		 <div class="container mt-5 mb-5">
+		   <div class="row justify-content-md-center">
+		     <div class="col-md-auto">
+		       <h3></h3>
+		     </div>
+		   </div>
+		   <div class="row">
+		     <div class="col-6">
+			   <div class="card" >
+			     <div class="card-body">
+			       <h5 class="card-title text-center">How many animals from each animal group live in our zoo?</h5>
+				   <!-- TODO : write the code for visualisation 1 here -->
+           <canvas class="chart chart-bar" chart-data="myAnimals" chart-labels="myAnimalgroups" > </canvas>
+           <canvas class="chart chart-pie" chart-data="myAnimals" chart-labels="myAnimalgroups" ></canvas>
+      <!--   <canvas class="chart chart-line" chart-data="myAnimals" chart-labels="myAnimalgroups" ></canvas> -->
+
+
+
+				   <!-- TODO : add the sparql query here -->
+           {{informationText1}}
+
+			       <p class="card-text">{{}} </p>
+			     </div>
+			   </div>
+		     </div>
+
+		     <div class="col-6">
+			   <div class="card" >
+			     <div class="card-body">
+		       <h5 class="card-title text-center">How many areas does the zoo have in each climate zone?</h5>
+				   <!-- TODO : write the code for visualisation 2 here -->
+           <canvas class="chart chart-bar" chart-data="myAreas" chart-labels="myClimatezones" ></canvas>
+           <canvas class="chart chart-pie" chart-data="myAreas" chart-labels="myClimatezones"></canvas>
+           <!--<canvas class="chart chart-line" chart-data="mySameAsObjects" chart-labels="mySubject" ></canvas>-->
+
+
+           {{informationText2}}
+			       <p class="card-text">{{}}</p>
+			     </div>
+			   </div>
+		     </div>
+
+		   </div>
+		 </div>
+     <div class="container mt-5 mb-5">
+		   <div class="row">
+  		     <div class="col-8">
+
+
+                    <h2>Type in a SPARQL query to find out which animals live in each area</h2>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" ng-model="myInput" placeholder="Type here" >
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" ng-click="doMyAction()" type="button">GO!</button>
+                      </div>
+                    </div>
+                    <h2>Type in a SPARQL query to find out how many animals live in each area</h2>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" ng-model="myInput" placeholder="Type here" >
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" ng-click="doMyAction()" type="button">GO!</button>
+                      </div>
+                    </div>
+
+
+                    <p>{{result}}</p>
+
+
+                    <canvas class="chart chart-bar" chart-data="myDynamicData" chart-labels="myDynamicLabels" > </canvas>
+
+  		     </div>
+		    </div>
+		 </div>
+
+
+
+    </div>
+
+
+         <div class="container mt-5 mb-5">
+           <div class="row">
+               <div class="col-8">
+                  <h2><font color="red">{{myDisplayMessage}}</font></h2>
+                  <canvas class="chart chart-pie" chart-data="myDynamicData" chart-labels="myDynamicLabels"> </canvas>
+               </div>
+            </div>
+         </div>
+         </div>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer  py-3 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; 2019 Animalzoo Some Rights Reserved</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+	<script src="js/Chart.min.js"></script>
+	<script src="js/angular-chart.min.js"></script>
+
+	<script src="main.js"></script>
+
+  </body>
+
+</html>
