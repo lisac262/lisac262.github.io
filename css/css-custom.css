@@ -1,0 +1,27 @@
+.footer-sticky {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.bg-acl {
+  background-image: url("https://ichef.bbci.co.uk/childrens-responsive-ichef-live/r/720/1x/cbbc/the_zoo_who_are_you_quiz_index_new.jpg"); /* The image used */
+background-color: #cccccc; /* Used if the image is unavailable */
+height: 500px; /* You must set a specified height */
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+
+}
+
+.a-acl {
+	color: #3c3c3c!important;
+}
+
+.my-card:hover {
+	border-color: #f58723;
+}
+.col{
+  text-align: center;
+}
